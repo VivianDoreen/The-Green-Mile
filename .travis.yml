@@ -14,3 +14,6 @@ before_script:
 # command to run tests
 script:
   - coverage run --source='app' -m pytest && coverage report && coverage html
+
+after_success:
+  - coveralls

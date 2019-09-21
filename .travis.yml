@@ -13,11 +13,4 @@ before_script:
 
 # command to run tests
 script:
-  - python3 -m pytest --cov=app
-
-after_script:
-  - coverage xml
-  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
-
-after_success:
-  - coveralls
+  - coverage run --source='app' -m pytest && coverage report && coverage html

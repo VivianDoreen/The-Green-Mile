@@ -4,4 +4,6 @@ The Green Mile is a company which specializes in door to door delivery of packag
 
 [![Build Status](https://travis-ci.com/VivianDoreen/The-Green-Mile.svg?branch=develop)](https://travis-ci.com/VivianDoreen/The-Green-Mile)
 
+
 [![Coverage Status](https://coveralls.io/repos/github/VivianDoreen/The-Green-Mile/badge.svg?branch=develop)](https://coveralls.io/github/VivianDoreen/The-Green-Mile?branch=develop)
+

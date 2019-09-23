@@ -21,8 +21,12 @@ class DatabaseConnection():
             port=os.getenv("PORT"),
             database=os.getenv("DATABASE"),
         )
-        self.connection = psycopg2.connect(**self.conn_params)
-        print("success")
+        if os.environ.get('APP_SETTINGS') == 'production':
+            self.connection = psycopg2.connect(os.environ.get())
+        else:
+            self.connection = psycopg2.connect(dbname=self.conn_params['database'], user=self.conn_params['user'],
+                                               password=self.conn_params['password'], port=self.conn_params['port'],
+                                               host=self.conn_params['host'])
         self.connection.autocommit = True
         self.cursor = self.connection.cursor()
 

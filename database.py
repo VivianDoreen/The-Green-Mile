@@ -22,7 +22,7 @@ class DatabaseConnection():
             database=os.getenv("DATABASE"),
         )
         if os.environ.get('APP_SETTINGS') == 'production':
-            self.connection = psycopg2.connect(os.environ.get())
+            self.connection = psycopg2.connect(os.environ.get("DATABASE_URL"))
         else:
             self.connection = psycopg2.connect(dbname=self.conn_params['database'], user=self.conn_params['user'],
                                                password=self.conn_params['password'], port=self.conn_params['port'],

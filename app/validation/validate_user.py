@@ -4,13 +4,13 @@ pattern = re.compile(r"^[a-zA-Z]{2,50}(?:[\s_-]{1}[a-zA-Z]+)*$")
 pattern_email = re.compile(r'[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+[.][A-Za-z]{2,4}')
 pattern_password = re.compile(r'^[a-zA-Z0-9]{5,100}.*[\s.]*$')
 def user_validate_name(data):
-    name = data['name']
-    if len(name) < 1:
-        return "name is required"
-    if not isinstance(name, str):
-        return "name input must be a string"
-    if not pattern.match(name):
-        return "name must begin with a letter"
+    full_name = data['full_name']
+    if len(full_name) < 1:
+        return "fullname is required"
+    if not isinstance(full_name, str):
+        return "fullname input must be a string"
+    if not pattern.match(full_name):
+        return "fullname must begin with a letter"
     return True
 
 def user_validate_username(data):
@@ -55,14 +55,14 @@ def validate_confirm_password(data):
 
 def validate_input(data):
     validate_all = {
-        "name": user_validate_name(data),
+        "full_name": user_validate_name(data),
         "username": user_validate_username(data),
         "email": user_validate_email(data),
         "password": validate_password(data),
         "confirm_password": validate_confirm_password(data),
     }
-    if validate_all['name'] != True:
-        return validate_all['name']
+    if validate_all['full_name'] != True:
+        return validate_all['full_name']
     if validate_all['username'] != True:
         return validate_all['username']
     if validate_all['email'] != True:

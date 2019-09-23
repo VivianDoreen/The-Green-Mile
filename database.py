@@ -3,9 +3,6 @@ from flask import Flask
 
 import os
 
-app = Flask(__name__)
-
-
 class DatabaseConnection():
     def __init__(self):
         """

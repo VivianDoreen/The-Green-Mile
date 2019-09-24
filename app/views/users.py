@@ -7,7 +7,7 @@ from app.validation.validate_user import validate_input
 
 @app.route('/api/v1/auth/signup', methods=['POST'])
 def create_user():
-    if(not request.json or not 'name' in  request.json
+    if(not request.json or not 'full_name' in  request.json
                         or not 'username' in request.json
                         or not 'email' in request.json
                         or not 'password' in request.json
@@ -24,7 +24,7 @@ def create_user():
 
     if(data['password']!=data['confirm_password']):
         return jsonify({'message':'passwords do not much'}), 422
-    register_user = UserModel.register_user(data['name'], data['email'], data['username'], data['password'], date_created, date_modified)
+    register_user = UserModel.register_user(data['full_name'], data['email'], data['username'], data['password'], date_created, date_modified)
     print(register_user)
     if register_user=='Email or username already exists':
         return jsonify({'message':register_user}), 403

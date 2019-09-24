@@ -5,7 +5,7 @@ response =[]
 
 class UserModel():
     @staticmethod
-    def register_user(name, email, username, password, date_created, date_modified):
+    def register_user(full_name, email, username, password, date_created, date_modified):
         """
         This method registers a user
         :param name:
@@ -26,7 +26,7 @@ class UserModel():
 
             if not (row_username and row_email):
                 register_user_query = "INSERT INTO users(name, email, username, password, date_created, date_modified) VALUES (%s, %s, %s, %s, %s, %s)"
-                connection.cursor.execute(register_user_query, [name, email, username, password, date_created, date_modified])
+                connection.cursor.execute(register_user_query, [full_name, email, username, password, date_created, date_modified])
 
                 query_to_check_for_inserted_user= "SELECT * FROM users WHERE username=%s"
                 connection.cursor.execute(query_to_check_for_inserted_user, [username])

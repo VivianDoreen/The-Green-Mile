@@ -16,6 +16,8 @@ psycopg2-binary = "*"
 psycopg2 = "*"
 flask-cors = "*"
 pylint = "*"
+python-dotenv = "*"
+pyjwt = "*"
 
 [requires]
 python_version = "3.7"

@@ -7,4 +7,3 @@ database_connection.create_tables()
 app = Flask(__name__)
 CORS(app)
 from app.views import users
-

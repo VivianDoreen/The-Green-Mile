@@ -5,5 +5,7 @@ The Green Mile is a company which specializes in door to door delivery of packag
 You may view the API from this link :- 
 https://the-green-mile.herokuapp.com/
 
+Registration API - https://the-green-mile.herokuapp.com/api/v1/auth/signup
+
 [![Build Status](https://travis-ci.com/VivianDoreen/The-Green-Mile.svg?branch=develop)](https://travis-ci.com/VivianDoreen/The-Green-Mile)
 [![Coverage Status](https://coveralls.io/repos/github/VivianDoreen/The-Green-Mile/badge.svg?branch=develop)](https://coveralls.io/github/VivianDoreen/The-Green-Mile?branch=develop)

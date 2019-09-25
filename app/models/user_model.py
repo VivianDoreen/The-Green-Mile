@@ -44,3 +44,21 @@ class UserModel():
             return "Email or username already exists"
         except Exception as exc:
             print(exc)
+
+    @staticmethod
+    def check_if_is_valid_user(email):
+        """
+        This method logs in a user
+        :param email: 
+        :param password: 
+        :return: 
+        """
+        try:
+            query_to_check_for_user = "SELECT * FROM users WHERE email=%s"
+            connection.cursor.execute(query_to_check_for_user, [email])
+            row = connection.cursor.fetchone()
+            if not row:
+                return "user not found"
+            return row
+        except Exception as exc:
+            print(exc)
